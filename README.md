@@ -1,24 +1,44 @@
-# README
+***Tables***
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Users
+ * nickname :string
+ * email :string
+ * password :string
+ * profile :text
+ * work :string
+ * avatar :text
 
-Things you may want to cover:
+## Association
+ * has_many :prototypes
+ * has_many :comments
+ * has_many :likes
 
-* Ruby version
+# Prototypes
+ * title :text
+ * catchcopy :text
+ * concept :text
+ * user_id
 
-* System dependencies
+## Association
+ * belongs_to :user
+ * has_many :comments
+ * has_many :likes
+ * has_many :prototype_images
 
-* Configuration
+# Prototype_images
+ * content :text
+ * status :text
 
-* Database creation
+## Association
+ * belongs_to :prototype
 
-* Database initialization
+# Likes
 
-* How to run the test suite
+ * user_id
+ * prototype_id
 
-* Services (job queues, cache servers, search engines, etc.)
+## Association
+ * belongs_to :prototype
+ * belongs_to :user
 
-* Deployment instructions
 
-* ...
